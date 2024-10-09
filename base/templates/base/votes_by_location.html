@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h2>Votes by Location</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Number of Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vote in votes_by_location %}
+        <tr>
+            <td>{{ vote.latitude }}</td>
+            <td>{{ vote.longitude }}</td>
+            <td>{{ vote.vote_count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
